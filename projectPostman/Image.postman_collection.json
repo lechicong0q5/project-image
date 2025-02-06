@@ -117,8 +117,35 @@
 		{
 			"name": "Delete Image",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3069/image/delete-image?image_id=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3069",
+					"path": [
+						"image",
+						"delete-image"
+					],
+					"query": [
+						{
+							"key": "image_id",
+							"value": "10"
+						}
+					]
+				}
 			},
 			"response": []
 		}
