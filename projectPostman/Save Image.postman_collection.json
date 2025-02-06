@@ -1,0 +1,36 @@
+{
+	"info": {
+		"_postman_id": "37ab2017-1e86-4ca1-8e1d-fa8b72c437c3",
+		"name": "Save Image",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39785173"
+	},
+	"item": [
+		{
+			"name": "Find Save",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3069/save/find-save?image_id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3069",
+					"path": [
+						"save",
+						"find-save"
+					],
+					"query": [
+						{
+							"key": "image_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

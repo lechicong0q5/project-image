@@ -1,0 +1,40 @@
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+CREATE TABLE `saved_images` (
+  `save_id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `image_id` int NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`save_id`),
+  KEY `user_id` (`user_id`),
+  KEY `image_id` (`image_id`),
+  CONSTRAINT `saved_images_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE,
+  CONSTRAINT `saved_images_ibfk_2` FOREIGN KEY (`image_id`) REFERENCES `images` (`image_id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `saved_images` (`save_id`, `user_id`, `image_id`, `created_at`) VALUES
+(1, 1, 2, '2025-01-26 08:48:25');
+INSERT INTO `saved_images` (`save_id`, `user_id`, `image_id`, `created_at`) VALUES
+(2, 2, 3, '2025-01-26 08:48:25');
+INSERT INTO `saved_images` (`save_id`, `user_id`, `image_id`, `created_at`) VALUES
+(3, 3, 1, '2025-01-26 08:48:25');
+INSERT INTO `saved_images` (`save_id`, `user_id`, `image_id`, `created_at`) VALUES
+(4, 3, 2, '2025-01-26 08:48:25'),
+(5, 3, 6, '2025-01-26 08:48:25'),
+(8, 2, 7, '2025-01-26 08:48:25'),
+(9, 2, 4, '2025-01-26 08:48:25');
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
